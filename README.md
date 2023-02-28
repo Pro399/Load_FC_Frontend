@@ -1,8 +1,9 @@
-# Getting Started with Create React App
+#Load_FC_Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend for Load_FC
+Final Year Project @NITD 2023
 
-## Available Scripts
+## Create React App
 
 In the project directory, you can run:
 
