@@ -1,5 +1,5 @@
 import "./datatable.scss";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 // import { userColumns, userRows } from "../../currentdata";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -8,10 +8,10 @@ const Datatable = ({ title, userRows, userColumns }) => {
   const [data, setData] = useState(userRows);
   useEffect(() => {
 
-      setData(userRows)
-      console.log("In DataTable UseEffect", userRows);
+    setData(userRows)
+    console.log("In DataTable UseEffect", userRows);
 
-  },[userRows])
+  }, [userRows])
   // console.log("In DataTable", userRows);
 
   const handleDelete = (id) => {
@@ -55,7 +55,10 @@ const Datatable = ({ title, userRows, userColumns }) => {
         columns={userColumns}
         pageSize={9}
         rowsPerPageOptions={[9]}
-      // checkboxSelection
+        // checkboxSelection
+        components={{
+          Toolbar: GridToolbar,
+        }}
       />
     </div>
   );
