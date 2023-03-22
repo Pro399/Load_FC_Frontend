@@ -14,7 +14,7 @@ const Home = () => {
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
-        Dashboard
+        <div>Dashboard</div>
         {/* <div className="widgets">
           <Widget type="current" />
           <Widget type="voltage" />

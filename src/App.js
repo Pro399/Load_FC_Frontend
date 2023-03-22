@@ -216,14 +216,14 @@ function App() {
             <Route path="profile">
               <Route index element={<Profile />} component={Profile} />
             </Route>
-            <Route path="products">
+            {/* <Route path="products">
               <Route index element={<List />} />
               <Route path=":productId" element={<Single />} />
               <Route
                 path="new"
                 element={<New inputs={productInputs} title="Add New Product" />}
               />
-            </Route>
+            </Route> */}
           </Route>
         </Routes>
       </BrowserRouter>

@@ -17,22 +17,30 @@ import ElectricMeterIcon from '@mui/icons-material/ElectricMeter';
 import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useAuth0 } from '@auth0/auth0-react';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
   const isUser = isAuthenticated && user;
+  const [isOpen, setIsOpen] = useState(true);
+  const toggle = () => setIsOpen(!isOpen);
   return (
-    <div className="sidebar">
+    <div style={{
+      width: isOpen ? "13rem" : "50px",
+      "background-color": isOpen ? "white" : "#f1f5f8"
+    }} className="sidebar">
       <div className="top">
+        <MenuIcon className="menu-btn" onClick={toggle} />
         <Link to="/dashboard" style={{ textDecoration: "none" }}>
-          <span className="logo">LOAD FC</span>
+          <span style={{ display: isOpen ? "flex" : "none" }} className="logo">LOAD FC</span>
         </Link>
       </div>
+
       <hr />
-      <div className="center">
+      <div style={{ display: isOpen ? "flex" : "none" }} className="center">
         <ul>
           <p className="title">MAIN</p>
           <Link to="/dashboard" style={{ textDecoration: "none" }}>
@@ -155,57 +163,6 @@ const Sidebar = () => {
             </li>
           </Link>
 
-          {/* <Link to="/currentcharts" style={{ textDecoration: "none" }}>
-            <li>
-              <BarChartIcon className="icon" />
-              <span>Current Charts</span>
-            </li>
-          </Link> */}
-
-          {/* <p className="title">CURRENT</p>
-          <Link to="/currentData" style={{ textDecoration: "none" }}>
-            <li>
-              <BoltIcon fontSize="large" className="icon" />
-              <span>Current Data</span>
-            </li>
-          </Link>
-          <Link to="/currentcharts" style={{ textDecoration: "none" }}>
-            <li>
-              <BarChartIcon className="icon" />
-              <span>Current Charts</span>
-            </li>
-          </Link>
-          <p className="title">VOLTAGE</p>
-          <Link to="/voltageMagData" style={{ textDecoration: "none" }}>
-            <li>
-              <ElectricMeterIcon className="icon" />
-              <span>Voltage Magnitude Data</span>
-            </li>
-          </Link>
-          <Link to="/voltagecharts" style={{ textDecoration: "none" }}>
-            <li>
-              <BarChartIcon className="icon" />
-              <span>Voltage Charts</span>
-            </li>
-          </Link>
-          <p className="title">POWER</p>
-          <Link to="/powerData" style={{ textDecoration: "none" }}>
-          <li>
-            <BatteryChargingFullIcon className="icon" />
-            <span>Power Data</span>
-          </li>
-          </Link>
-          <Link to="/powercharts" style={{ textDecoration: "none" }}>
-            <li>
-              <BarChartIcon className="icon" />
-              <span>Power Charts</span>
-            </li>
-          </Link> */}
-
-          {/* <li>
-            <SettingsApplicationsIcon className="icon" />
-            <span>Settings</span>
-          </li> */}
           <p className="title">USER</p>
           <Link to="/profile" style={{ textDecoration: "none" }}>
             <li>
@@ -224,7 +181,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-      <div className="bottom">
+      <div style={{ display: isOpen ? "flex" : "none" }} className="bottom">
         <div
           className="colorOption"
           onClick={() => dispatch({ type: "LIGHT" })}
