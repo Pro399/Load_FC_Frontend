@@ -17,6 +17,11 @@ function Method4() {
     // const [gamma, setGamma] = useState(0)
     const [CYLabel1, setChartYLabel1] = useState([])
     const [CYLabel2, setChartYLabel2] = useState([])
+    const [CYLabel3, setChartYLabel3] = useState([])
+    const [CYLabel4, setChartYLabel4] = useState([])
+
+    const [Mse, setMse] = useState(0)
+
     const [Dtitle, setDTitle] = useState("")
     const [Dcols, setDCols] = useState([])
     const [Drows, setDRows] = useState([])
@@ -50,7 +55,7 @@ function Method4() {
         }
 
         // Double_Exponential_Smoothing_Browns_One_Parameter_Method
-        title = "Single Exponential Smoothing Method - " + title
+        title = "Single Exponential Smoothing Method - " + title + " - Bus " + window.location.pathname.split("/")[1]
 
         axios.get(`http://localhost:5000/api/loadfc/${cur_id}`)
             .then((response) => {
@@ -103,30 +108,46 @@ function Method4() {
                         headerName: "Forecasted Data",
                         width: 290,
                     },
+                    {
+                        field: 'ae',
+                        headerName: "Absolute Error",
+                        width: 290,
+                    },
+                    {
+                        field: 'se',
+                        headerName: "Squared Error",
+                        width: 290,
+                    },
                 ];
 
+                let ssum = 0;
                 for (let i = 0; i < n; i++) {
                     let obj = {
                         id: slno[i],
                         [cur_key]: x[i],
                         Ft: Ft[i],
+                        ae: Math.abs(x[i] - Ft[i]),
+                        se: Math.pow((x[i] - Ft[i]), 2),
                     }
-                    // let chart_obj1={
-                    //     id: slno[i],
-                    // }
+
+                    ssum += Math.pow((x[i] - Ft[i]), 2)
 
                     rows.push(obj)
                 }
 
                 console.log("Cols", cols);
-
                 console.log("Rows", rows);
 
+                let mse = ssum / n;
+
+                setMse(mse)
                 setDTitle(title)
                 setDCols(cols)
                 setDRows(rows)
                 setChartYLabel1(`${cur_key}`)
                 setChartYLabel2('Ft')
+                setChartYLabel3('ae')
+                setChartYLabel4('se')
 
             })
             .catch((error) => {
@@ -146,16 +167,21 @@ function Method4() {
                     <form onSubmit={processData}>
                         {/* <label>Alpha:</label>
                         <input type="text" value={alpha} onChange={e => setAlpha((e.target.value>1)? 1: e.target.value)} name='alpha' placeholder='Enter value of alpha'></input> */}
-                        
-                        <TextField id="standard-basic" label="Alpha" variant="standard" name="alpha" value={alpha} onChange={e => setAlpha((e.target.value>1)? 1: e.target.value)} />
+
+                        <TextField id="standard-basic" label="Alpha" variant="standard" name="alpha" value={alpha} onChange={e => setAlpha((e.target.value > 1) ? 1 : e.target.value)} />
                         <br /><br />
-                        
+
                         <button type="submit" className="btnM">Submit</button>
                     </form>
                 </div>
                 <Datatable title={Dtitle} userColumns={Dcols} userRows={Drows} />
                 <br /> <br />
                 <Chart data={Drows} title={`${Dtitle} v/s Sl No.`} aspect={2 / 1} yLabel1={CYLabel1} yLabel2={CYLabel2} xLabel={'id'} />
+                <br /> <br />
+                <Chart data={Drows} title={`Absolute Error v/s Sl No.`} aspect={2 / 1} yLabel1={CYLabel3} xLabel={'id'} />
+                <br /> <br />
+                <Chart data={Drows} title={`Square Error v/s Sl No.`} footnote={`Mean Squared Error = ${Mse}`} aspect={2 / 1} yLabel2={CYLabel4} xLabel={'id'} />
+
             </div>
         </div>
     );

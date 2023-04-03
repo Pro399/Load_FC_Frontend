@@ -12,14 +12,15 @@ import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSyst
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import BoltIcon from '@mui/icons-material/Bolt';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import ElectricMeterIcon from '@mui/icons-material/ElectricMeter';
-import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
+// import BarChartIcon from '@mui/icons-material/BarChart';
+// import ElectricMeterIcon from '@mui/icons-material/ElectricMeter';
+// import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext, useState } from "react";
 import { useAuth0 } from '@auth0/auth0-react';
 import MenuIcon from '@mui/icons-material/Menu';
+// import DarkModeReducer from "../../context/darkModeReducer";
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
@@ -30,7 +31,7 @@ const Sidebar = () => {
   return (
     <div style={{
       width: isOpen ? "13rem" : "50px",
-      "background-color": isOpen ? "white" : "#f1f5f8"
+      // "background-color": isOpen&&!(darkModeContext) ? "white" : "#f1f5f8"
     }} className="sidebar">
       <div className="top">
         <MenuIcon className="menu-btn" onClick={toggle} />

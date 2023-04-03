@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const Chart = ({ data, aspect, title, yLabel1, yLabel2, xLabel}) => {
+const Chart = ({ data, aspect, title, footnote, yLabel1, yLabel2, xLabel }) => {
   return (
     <div className="chart">
       <div className="title">{title}</div>
@@ -40,7 +40,7 @@ const Chart = ({ data, aspect, title, yLabel1, yLabel2, xLabel}) => {
             stroke="#C1292E"
             fillOpacity={1}
             fill="url(#total1)"
-            activeDot={{strokeWidth:1 ,r:4}}
+            activeDot={{ strokeWidth: 1, r: 4 }}
           />
           <Area
             type="monotone"
@@ -48,10 +48,12 @@ const Chart = ({ data, aspect, title, yLabel1, yLabel2, xLabel}) => {
             stroke="#345995"
             fillOpacity={0.5}
             fill="url(#total2)"
-            activeDot={{strokeWidth:1 ,r:4}}
+            activeDot={{ strokeWidth: 1, r: 4 }}
           />
         </AreaChart>
       </ResponsiveContainer>
+      <br />
+      <div>{footnote}</div>
     </div>
   );
 };
