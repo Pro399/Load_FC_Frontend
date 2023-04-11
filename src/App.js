@@ -42,158 +42,265 @@ function App() {
             <Route index element={<LandingPage />} />
             <Route path="login" element={<Login />} />
 
-            <Route path="21">
-              <Route path="voltageMagData">
-                <Route index element={<VoltageMagList />} component={VoltageMagList} />
+            <Route path="14">
+              <Route path="9">
+                <Route path="voltageMagData">
+                  <Route index element={<VoltageMagList />} component={VoltageMagList} />
 
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
 
+                </Route>
+
+
+                <Route path="voltageAngData">
+                  <Route index element={<VoltageAngList />} component={VoltageAngList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
               </Route>
 
+              <Route path="12">
+                <Route path="powerActData">
+                  <Route index element={<PowerActList />} component={PowerActList} />
 
-              <Route path="voltageAngData">
-                <Route index element={<VoltageAngList />} component={VoltageAngList} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
 
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
 
+                </Route>
+
+                <Route path="powerReactData">
+                  <Route index element={<PowerReactList />} component={PowerReactList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+
+                </Route>
+              </Route>
+            </Route>
+
+            <Route path="30">
+              <Route path="21">
+                <Route path="voltageMagData">
+                  <Route index element={<VoltageMagList />} component={VoltageMagList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
+
+
+                <Route path="voltageAngData">
+                  <Route index element={<VoltageAngList />} component={VoltageAngList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
+              </Route>
+
+              <Route path="30">
+                <Route path="powerActData">
+                  <Route index element={<PowerActList />} component={PowerActList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+
+                </Route>
+
+                <Route path="powerReactData">
+                  <Route index element={<PowerReactList />} component={PowerReactList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+
+                </Route>
               </Route>
             </Route>
 
             <Route path="57">
-              <Route path="voltageMagData">
-                <Route index element={<VoltageMagList />} component={VoltageMagList} />
+              <Route path="21">
+                <Route path="voltageMagData">
+                  <Route index element={<VoltageMagList />} component={VoltageMagList} />
 
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
 
+                </Route>
+
+
+                <Route path="voltageAngData">
+                  <Route index element={<VoltageAngList />} component={VoltageAngList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
               </Route>
 
+              <Route path="57">
+                <Route path="voltageMagData">
+                  <Route index element={<VoltageMagList />} component={VoltageMagList} />
 
-              <Route path="voltageAngData">
-                <Route index element={<VoltageAngList />} component={VoltageAngList} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
 
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
-
-              </Route>
-            </Route>
-
-            <Route path="97">
-              <Route path="voltageMagData">
-                <Route index element={<VoltageMagList />} component={VoltageMagList} />
-
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
-
-              </Route>
+                </Route>
 
 
-              <Route path="voltageAngData">
-                <Route index element={<VoltageAngList />} component={VoltageAngList} />
+                <Route path="voltageAngData">
+                  <Route index element={<VoltageAngList />} component={VoltageAngList} />
 
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
 
-              </Route>
-            </Route>
-
-            <Route path="117">
-              <Route path="voltageMagData">
-                <Route index element={<VoltageMagList />} component={VoltageMagList} />
-
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
-
+                </Route>
               </Route>
 
+              <Route path="53">
+                <Route path="powerActData">
+                  <Route index element={<PowerActList />} component={PowerActList} />
 
-              <Route path="voltageAngData">
-                <Route index element={<VoltageAngList />} component={VoltageAngList} />
-
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
-
-              </Route>
-            </Route>
-
-            <Route path = "53">
-              <Route path="powerActData">
-                <Route index element={<PowerActList />} component={PowerActList} />
-
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
 
 
-              </Route>
+                </Route>
 
-              <Route path="powerReactData">
-                <Route index element={<PowerReactList />} component={PowerReactList} />
+                <Route path="powerReactData">
+                  <Route index element={<PowerReactList />} component={PowerReactList} />
 
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
 
 
+                </Route>
               </Route>
             </Route>
 
-            <Route path = "106">
-              <Route path="powerActData">
-                <Route index element={<PowerActList />} component={PowerActList} />
+            <Route path="118">
+              <Route path="97">
+                <Route path="voltageMagData">
+                  <Route index element={<VoltageMagList />} component={VoltageMagList} />
 
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
 
 
+                <Route path="voltageAngData">
+                  <Route index element={<VoltageAngList />} component={VoltageAngList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
               </Route>
 
-              <Route path="powerReactData">
-                <Route index element={<PowerReactList />} component={PowerReactList} />
+              <Route path="117">
+                <Route path="voltageMagData">
+                  <Route index element={<VoltageMagList />} component={VoltageMagList} />
 
-                <Route path="method1" element={<Method1 />} />
-                <Route path="method2" element={<Method2 />} />
-                <Route path="method3" element={<Method3 />} />
-                <Route path="method4" element={<Method4 />} />
-                <Route path="method5" element={<Method5 />} />
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
 
 
+                <Route path="voltageAngData">
+                  <Route index element={<VoltageAngList />} component={VoltageAngList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
+              </Route>
+
+              <Route path="106">
+                <Route path="powerActData">
+                  <Route index element={<PowerActList />} component={PowerActList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
+
+                <Route path="powerReactData">
+                  <Route index element={<PowerReactList />} component={PowerReactList} />
+
+                  <Route path="method1" element={<Method1 />} />
+                  <Route path="method2" element={<Method2 />} />
+                  <Route path="method3" element={<Method3 />} />
+                  <Route path="method4" element={<Method4 />} />
+                  <Route path="method5" element={<Method5 />} />
+
+                </Route>
               </Route>
             </Route>
-
             {/* <Route path="powerData">
               <Route index element={<PowerList/>} component = {PowerList}/>
               <Route path=":userId" element={<Single />} />

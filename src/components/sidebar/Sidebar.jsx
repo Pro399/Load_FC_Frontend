@@ -17,7 +17,7 @@ import BoltIcon from '@mui/icons-material/Bolt';
 // import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useAuth0 } from '@auth0/auth0-react';
 import MenuIcon from '@mui/icons-material/Menu';
 // import DarkModeReducer from "../../context/darkModeReducer";
@@ -28,11 +28,9 @@ const Sidebar = () => {
   const isUser = isAuthenticated && user;
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
+  
   return (
-    <div style={{
-      width: isOpen ? "13rem" : "50px",
-      // "background-color": isOpen&&!(darkModeContext) ? "white" : "#f1f5f8"
-    }} className="sidebar">
+    <div className="sidebar" style={{ width: isOpen ? "13rem" : "3rem" }} >
       <div className="top">
         <MenuIcon className="menu-btn" onClick={toggle} />
         <Link to="/dashboard" style={{ textDecoration: "none" }}>
@@ -51,6 +49,78 @@ const Sidebar = () => {
             </li>
           </Link>
 
+          {/*Bus System 14 */}
+
+          <p className="title">IEEE 14 BUS SYSTEM</p>
+          <Link style={{ textDecoration: "none" }}>
+            <li>
+              <BoltIcon fontSize="large" className="icon" />
+              <span>Bus 9</span>
+              <Link to="/14/9/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
+                <li>
+                  <btn className="btnselec">Voltage Magnitude</btn>
+                </li>
+              </Link>
+              <Link to="/14/9/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
+                <li>
+                  <btn className="btnselec">Voltage Angle</btn>
+                </li>
+              </Link>
+            </li>
+          </Link>
+          <Link style={{ textDecoration: "none" }}>
+            <li>
+              <BoltIcon fontSize="large" className="icon" />
+              <span>Bus 12</span>
+              <Link to="/14/12/powerActData" style={{ textDecoration: "none", fontSize: 10 }}>
+                <li>
+                  <btn className="btnselec">Active Power</btn>
+                </li>
+              </Link>
+              <Link to="/14/12/powerReactData" style={{ textDecoration: "none", fontSize: 10 }}>
+                <li>
+                  <btn className="btnselec">Reactive Power</btn>
+                </li>
+              </Link>
+            </li>
+          </Link>
+
+          {/*Bus System 30 */}
+
+          <p className="title">IEEE 30 BUS SYSTEM</p>
+          <Link style={{ textDecoration: "none" }}>
+            <li>
+              <BoltIcon fontSize="large" className="icon" />
+              <span>Bus 21</span>
+              <Link to="/30/21/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
+                <li>
+                  <btn className="btnselec">Voltage Magnitude</btn>
+                </li>
+              </Link>
+              <Link to="/30/21/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
+                <li>
+                  <btn className="btnselec">Voltage Angle</btn>
+                </li>
+              </Link>
+            </li>
+          </Link>
+          <Link style={{ textDecoration: "none" }}>
+            <li>
+              <BoltIcon fontSize="large" className="icon" />
+              <span>Bus 30</span>
+              <Link to="/30/30/powerActData" style={{ textDecoration: "none", fontSize: 10 }}>
+                <li>
+                  <btn className="btnselec">Active Power</btn>
+                </li>
+              </Link>
+              <Link to="/30/30/powerReactData" style={{ textDecoration: "none", fontSize: 10 }}>
+                <li>
+                  <btn className="btnselec">Reactive Power</btn>
+                </li>
+              </Link>
+            </li>
+          </Link>
+
           {/*Bus System 57 */}
 
           <p className="title">IEEE 57 BUS SYSTEM</p>
@@ -59,12 +129,12 @@ const Sidebar = () => {
               <BoltIcon fontSize="large" className="icon" />
               <span>Bus 21</span>
 
-              <Link to="/21/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/57/21/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Voltage Magnitude</btn>
                 </li>
               </Link>
-              <Link to="/21/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/57/21/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Voltage Angle</btn>
                 </li>
@@ -76,12 +146,12 @@ const Sidebar = () => {
             <li>
               <BoltIcon fontSize="large" className="icon" />
               <span>Bus 57</span>
-              <Link to="/57/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/57/57/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Voltage Magnitude</btn>
                 </li>
               </Link>
-              <Link to="/57/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/57/57/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Voltage Angle</btn>
                 </li>
@@ -92,25 +162,18 @@ const Sidebar = () => {
             <li>
               <BoltIcon fontSize="large" className="icon" />
               <span>Bus 53</span>
-              <Link to="/53/powerActData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/57/53/powerActData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Active Power</btn>
                 </li>
               </Link>
-              <Link to="/53/powerReactData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/57/53/powerReactData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Reactive Power</btn>
                 </li>
               </Link>
             </li>
           </Link>
-
-          {/* <Link to="/currentcharts" style={{ textDecoration: "none" }}>
-            <li>
-              <BarChartIcon className="icon" />
-              <span>Current Charts</span>
-            </li>
-          </Link> */}
 
           {/* Bus System 118 */}
 
@@ -119,12 +182,12 @@ const Sidebar = () => {
             <li>
               <BoltIcon fontSize="large" className="icon" />
               <span>Bus 97</span>
-              <Link to="/97/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/118/97/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Voltage Magnitude</btn>
                 </li>
               </Link>
-              <Link to="/97/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/118/97/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Voltage Angle</btn>
                 </li>
@@ -135,12 +198,12 @@ const Sidebar = () => {
             <li>
               <BoltIcon fontSize="large" className="icon" />
               <span>Bus 117</span>
-              <Link to="/117/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/118/117/voltageMagData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Voltage Magnitude</btn>
                 </li>
               </Link>
-              <Link to="/117/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/118/117/voltageAngData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Voltage Angle</btn>
                 </li>
@@ -151,12 +214,12 @@ const Sidebar = () => {
             <li>
               <BoltIcon fontSize="large" className="icon" />
               <span>Bus 106</span>
-              <Link to="/106/powerActData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/118/106/powerActData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Active Power</btn>
                 </li>
               </Link>
-              <Link to="/106/powerReactData" style={{ textDecoration: "none", fontSize: 10 }}>
+              <Link to="/118/106/powerReactData" style={{ textDecoration: "none", fontSize: 10 }}>
                 <li>
                   <btn className="btnselec">Reactive Power</btn>
                 </li>

@@ -142,14 +142,6 @@ p {
   justify-content: space-between;
 }
 
-.formM {
-  display: flex;
-  justify-content: left;
-  /* text-align: center; */
-  justify-items: right;
-  padding: 1rem;
-}
-
 /* label{
   letter-spacing: var(--spacing);
   font-size: 0.875rem;

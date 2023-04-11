@@ -15,11 +15,13 @@ import { useEffect, useState } from "react";
 
 const VoltageAngList = () => {
   const [rows, setRows] = useState([])
-  let cur_id = window.location.pathname.split("/")[1]
+  let cur_id = window.location.pathname.split("/")[2]
   console.log(cur_id);
+  let cur_sys = window.location.pathname.split("/")[1]
+  console.log(cur_sys);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/loadfc/${cur_id}`)
+    axios.get(`http://localhost:5000/api/loadfc/${cur_sys}/${cur_id}`)
       .then((response) => {
         console.log(response.data)
 
@@ -46,24 +48,24 @@ const VoltageAngList = () => {
       <div className="listContainer">
         <Navbar />
         <div>
-          <Link to={`/${cur_id}/voltageAngData/method1`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/voltageAngData/method1`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 1</button>
           </Link>
-          <Link to={`/${cur_id}/voltageAngData/method2`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/voltageAngData/method2`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 2</button>
           </Link>
-          <Link to={`/${cur_id}/voltageAngData/method3`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/voltageAngData/method3`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 3</button>
           </Link>
-          <Link to={`/${cur_id}/voltageAngData/method4`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/voltageAngData/method4`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 4</button>
           </Link>
-          <Link to={`/${cur_id}/voltageAngData/method5`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/voltageAngData/method5`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 5</button>
           </Link>
         </div>
 
-        <Datatable title={`Bus ${cur_id} - `+vAngData} userColumns={voltageAngColumns} userRows={rows} />
+        <Datatable title={`IEEE ${cur_sys} Bus System - Bus ${cur_id} - `+vAngData} userColumns={voltageAngColumns} userRows={rows} />
         <br /><br />
         {/* <Datatable userColumns = {userColumn} userRows = {userRow}/> */}
 

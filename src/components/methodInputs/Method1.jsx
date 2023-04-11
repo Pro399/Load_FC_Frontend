@@ -1,3 +1,4 @@
+import "./method.scss"
 import { TextField } from '@mui/material';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
@@ -11,7 +12,8 @@ import Sidebar from '../sidebar/Sidebar';
 
 function Method1() {
 
-    let cur_id = window.location.pathname.split("/")[1]
+    let cur_sys = window.location.pathname.split("/")[1]
+    let cur_id = window.location.pathname.split("/")[2]
 
     const [alpha, setAlpha] = useState(0)
     const [gamma, setGamma] = useState(0)
@@ -32,8 +34,9 @@ function Method1() {
 
         console.log(alpha, gamma, cur_id)
 
-        let url_loc = window.location.pathname.split("/")[2]
-        // console.log(url_loc);
+        let url_loc = window.location.pathname.split("/")[3]
+        // console.log("Method 1 : "+url_loc);
+
         let cur_key = '', title = ''
         let rows = [], cols = []
         // let chartRows = [], chartCols = []
@@ -56,9 +59,9 @@ function Method1() {
         }
 
         // Double_Exponential_Smoothing_Holts_Two_Parameter_Method
-        title = "Double Exponential Smoothing Holts Two Parameter Method - " + title + " - Bus " + window.location.pathname.split("/")[1]
+        title = "Double Exponential Smoothing Holts Two Parameter Method - " + title + ` - Bus ${cur_id} (${cur_sys})`
 
-        axios.get(`http://localhost:5000/api/loadfc/${cur_id}`)
+        axios.get(`http://localhost:5000/api/loadfc/${cur_sys}/${cur_id}`)
             .then((response) => {
                 console.log(response.data);
 
@@ -204,7 +207,7 @@ function Method1() {
             <Sidebar />
             <div className="listContainer">
                 <Navbar />
-                <div class="formM">
+                <div class="formContainer">
                     <form onSubmit={processData}>
                         {/* <label>Alpha:</label>
                         <input type="text" value={alpha} onChange={e => setAlpha((e.target.value>1)? 1: e.target.value)} name='alpha' placeholder='Enter value of alpha'></input> */}

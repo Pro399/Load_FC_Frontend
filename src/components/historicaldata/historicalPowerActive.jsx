@@ -12,11 +12,13 @@ import axios from "axios";
 
 const PowerActList = () => {
   const [rows, setRows] = useState([])
-  let cur_id = window.location.pathname.split("/")[1]
+  let cur_id = window.location.pathname.split("/")[2]
   console.log(cur_id);
+  let cur_sys = window.location.pathname.split("/")[1]
+  console.log(cur_sys);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/loadfc/${cur_id}`)
+    axios.get(`http://localhost:5000/api/loadfc/${cur_sys}/${cur_id}`)
       .then((response) => {
         console.log(response.data)
 
@@ -45,23 +47,23 @@ const PowerActList = () => {
       <div className="listContainer">
         <Navbar />
         <div>
-          <Link to={`/${cur_id}/powerActData/method1`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/powerActData/method1`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 1</button>
           </Link>
-          <Link to={`/${cur_id}/powerActData/method2`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/powerActData/method2`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 2</button>
           </Link>
-          <Link to={`/${cur_id}/powerActData/method3`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/powerActData/method3`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 3</button>
           </Link>
-          <Link to={`/${cur_id}/powerActData/method4`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/powerActData/method4`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 4</button>
           </Link>
-          <Link to={`/${cur_id}/powerActData/method5`} style={{ textDecoration: 'none', }}>
+          <Link to={`/${cur_sys}/${cur_id}/powerActData/method5`} style={{ textDecoration: 'none', }}>
             <button className="btnM">Method 5</button>
           </Link>
         </div>
-        <Datatable title={`Bus ${cur_id} - `+pActData} userColumns={powerActColumns} userRows={rows} />
+        <Datatable title={`IEEE ${cur_sys} Bus System - Bus ${cur_id} - `+pActData} userColumns={powerActColumns} userRows={rows} />
         <br /><br />
         {/* <Datatable userColumns = {userColumn} userRows = {userRow}/> */}
       </div>
