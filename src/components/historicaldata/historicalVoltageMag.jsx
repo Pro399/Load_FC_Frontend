@@ -38,7 +38,7 @@ const VoltageMagList = () => {
       .catch((error) => {
         console.log(error);
       })
-  }, [cur_id])
+  }, [cur_id,cur_sys])
 
 
   // console.log(cur_id);

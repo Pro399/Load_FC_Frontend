@@ -185,7 +185,9 @@ function Method2() {
                         se: Math.pow((x[i] - Ft[i]), 2),
                     }
 
-                    ssum += Math.pow((x[i] - Ft[i]), 2)
+                    if (i >= 2) {
+                        ssum += Math.pow((x[i] - Ft[i]), 2)
+                    }
 
                     rows.push(obj)
                 }
@@ -193,7 +195,7 @@ function Method2() {
                 console.log("Cols", cols);
                 console.log("Rows", rows);
 
-                let mse = ssum / n;
+                let mse = ssum / (n-2);
 
                 setMse(mse)
                 setDTitle(title)
@@ -235,7 +237,7 @@ function Method2() {
                 <br /> <br />
                 <Chart data={Drows} title={`Absolute Error v/s Sl No.`} aspect={2 / 1} yLabel1={CYLabel3} xLabel={'id'} />
                 <br /> <br />
-                <Chart data={Drows} title={`Square Error v/s Sl No.`} footnote={`Mean Squared Error = ${Mse}`} aspect={2 / 1} yLabel2={CYLabel4} xLabel={'id'} />
+                <Chart data={Drows} title={`Square Error v/s Sl No.`} footnote={`Mean Squared Error(after forecast begins) = ${Mse}`} aspect={2 / 1} yLabel2={CYLabel4} xLabel={'id'} />
 
             </div>
         </div>

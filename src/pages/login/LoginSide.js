@@ -17,6 +17,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
+            <br/>
             {'Final Year Project by '}
             <br/>
             {/* <Link color="inherit" href="">

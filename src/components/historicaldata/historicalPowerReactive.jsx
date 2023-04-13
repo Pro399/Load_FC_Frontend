@@ -38,7 +38,7 @@ const PowerReactList = () => {
       .catch((error) => {
         console.log(error);
       })
-  }, [cur_id])
+  }, [cur_id,cur_sys])
   // console.log(cur_id);
   // console.log(window.location.pathname);
   return (
