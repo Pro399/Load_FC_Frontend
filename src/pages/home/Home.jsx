@@ -14,23 +14,73 @@ const Home = () => {
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
-        <div>Dashboard</div>
-        {/* <div className="widgets">
-          <Widget type="current" />
-          <Widget type="voltage" />
-          <Widget type="power" /> */}
-          {/* <Widget type="balance" /> */}
+        <div className="widgets-new">
+          <div className="left-new">
+            {/* <span className="title">title</span> */}
+            <span className="method">
+              Method 1
+            </span>
+          </div>
+          <div className="right-new">
+            <span className="method-name">
+              Double Exponential Smoothing Holts Two Parameter Method
+            </span>
+          </div>
         </div>
-        {/* <div className="charts">
-          <Featured />
-          <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
-        </div> */}
-        {/* <div className="listContainer">
-          <div className="listTitle">Summary</div> */}
-          {/* <Table /> */}
-          {/* <Datatable title = {hData} userColumns = {homeColumns} userRows = {homeRows}/>
-        </div> */}
-      {/* </div> */}
+        <div className="widgets-new">
+          <div className="left-new">
+            {/* <span className="title">title</span> */}
+            <span className="method">
+              Method 2
+            </span>
+          </div>
+          <div className="right-new">
+            <span className="method-name">
+              Double Exponential Smoothing Browns One Parameter Method
+            </span>
+          </div>
+        </div>
+        <div className="widgets-new">
+          <div className="left-new">
+            {/* <span className="title">title</span> */}
+            <span className="method">
+              Method 3
+            </span>
+          </div>
+          <div className="right-new">
+            <span className="method-name">
+              Triple Exponential Smoothing Browns One Parameter Quadratic Method
+            </span>
+          </div>
+        </div>
+        <div className="widgets-new">
+          <div className="left-new">
+            {/* <span className="title">title</span> */}
+            <span className="method">
+              Method 4
+            </span>
+          </div>
+          <div className="right-new">
+            <span className="method-name">
+              Single Exponential Smoothing Method
+            </span>
+          </div>
+        </div>
+        <div className="widgets-new">
+          <div className="left-new">
+            {/* <span className="title">title</span> */}
+            <span className="method">
+              Method 5
+            </span>
+          </div>
+          <div className="right-new">
+            <span className="method-name">
+              Adaptive Single Exponential Smoothing Method
+            </span>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

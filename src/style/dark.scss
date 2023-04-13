@@ -84,4 +84,14 @@
         color: 'info';
       }
   }
+  .home{
+    .homeContainer{
+      .widgets-new{
+        background-color: #111;
+        .left-new{
+          color:#111;
+        }
+      }
+    }
+  }
 }

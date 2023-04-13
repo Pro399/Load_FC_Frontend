@@ -1,3 +1,5 @@
+
+
 .home {
   display: flex;
 
@@ -25,6 +27,42 @@
         font-weight: 500;
         color: gray;
         margin-bottom: 15px;
+      }
+    }
+
+    .widgets-new {
+      display: flex;
+      // justify-content: space-between;
+      // flex: 2;
+      padding: 10px;
+      padding-left: 0px;
+      margin: 15px;
+      background-color: white;
+      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+      border-radius: 10px;
+      height: 100px;
+
+      .left-new,
+      .right-new {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        // justify-self: right;
+      }
+      .left-new {
+        font-size: 20px;
+        font-weight: 450;
+        color: white;
+        padding: 10px;
+        background-color: #ff8800;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+      }
+      .right-new {
+        font-size: 26px;
+        font-weight: 250;
+        padding-left: 5%;
       }
     }
   }
